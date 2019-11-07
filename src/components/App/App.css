@@ -1,6 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
+    background-color: #f9e299;
 }
 
 .alert {
@@ -46,4 +47,15 @@ input {
     outline:0;
     border-bottom:1px solid #444; 
     cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, p {
+    text-align: center;
+}
+
+.monkeyMap {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
