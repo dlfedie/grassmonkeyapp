@@ -3,17 +3,25 @@ import React, { Component } from 'react';
 import monkeyMap from '../images/monkeyMap.jpg';
 import moment from 'moment';
 
+import Clock from '../Clock/Clock';
+
+
 class AboutPage extends Component {
   state = {
-    timeToGo: 0
+    timeToGo: undefined,
   }
 
   componentDidMount() {
     this.setTime();
+    
   }
+  
+
+  
 
   setTime = () => {
-    let clock = moment().add(90, 'seconds').calendar();
+    let clock = moment().add(1, 'minutes').format('MM DD YYYY, h:mm a');
+    // clock.moment().add(2, 'minutes');
     this.setState({
       timeToGo: clock
     })
@@ -21,6 +29,7 @@ class AboutPage extends Component {
 
   render() {
 
+   
 
 
     return (
@@ -53,6 +62,7 @@ class AboutPage extends Component {
         <h3>
           1:30 until Graham does something they'll regret
         </h3>
+        <Clock timeTillDate={this.state.timeToGo} timeFormat="MM DD YYYY, h:mm a" setTime={this.setTime} />
         {this.state.timeToGo}
         <h3>
           Welcome shot recipe:
