@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 
 import monkeyMap from '../images/monkeyMap.jpg';
 import moment from 'moment';
@@ -8,25 +10,25 @@ import CountDownTimer from '../CountDown/CountDown';
 
 
 class AboutPage extends Component {
-  state = {
-    timeToGo: undefined,
-  }
+  // state = {
+  //   timeToGo: undefined,
+  // }
 
   componentDidMount() {
-    this.setTime();
+    // this.setTime();
 
   }
 
 
 
 
-  setTime = () => {
-    let clock = moment().add(1, 'minutes').format('MM DD YYYY, h:mm a');
-    // clock.moment().add(2, 'minutes');
-    this.setState({
-      timeToGo: clock
-    })
-  }
+  // setTime = () => {
+  //   let clock = moment().add(1, 'minutes').format('MM DD YYYY, h:mm a');
+  //   // clock.moment().add(2, 'minutes');
+  //   this.setState({
+  //     timeToGo: clock
+  //   })
+  // }
 
   render() {
 
@@ -50,7 +52,8 @@ class AboutPage extends Component {
         <div className="countdownTimer">
           <CountDownTimer />
         </div>
-        <h3>until Graham does something they'll regret</h3>
+        <h3>until {this.props.chosen.monkey} does something {this.props.chosen.gender}'ll regret</h3>
+        {/* {JSON.stringify(this.props.monkeys)} */}
         <h3>Welcome shot recipe:</h3>
         <p>Mix 1 part 99 Bananas with 1 Monkey body part. Serve immediately.</p>
       </div>
@@ -58,4 +61,11 @@ class AboutPage extends Component {
   }
 }
 
-export default AboutPage;
+const mapStateToProps = reduxStore => {
+  return {
+    monkeys: reduxStore.monkeys.grassMonkeyPlayers,
+    chosen: reduxStore.monkeys.chosenPlayer,
+  };
+};
+
+export default connect(mapStateToProps)(AboutPage);

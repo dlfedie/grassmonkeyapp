@@ -5,6 +5,8 @@ import axios from 'axios';
 function* getMonkey(action) {
     console.log('monkey');
     
+    
+    
 }
 
 function* monkeySaga() {
