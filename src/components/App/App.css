@@ -66,3 +66,9 @@ h1, h2, h3, h4, h5, p {
     align-items: center;
     justify-content: center;
 }
+
+.wildcards {
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
