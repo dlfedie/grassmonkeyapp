@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
+// from: https://www.florin-pop.com/blog/2019/05/countdown-built-with-react/
+
 
 class Clock extends Component {
     state = {

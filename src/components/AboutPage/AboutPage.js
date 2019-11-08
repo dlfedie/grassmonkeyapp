@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import monkeyMap from '../images/monkeyMap.jpg';
 import moment from 'moment';
 
-import Clock from '../Clock/Clock';
+// import Clock from '../Clock/Clock';
+import CountDownTimer from '../CountDown/CountDown';
 
 
 class AboutPage extends Component {
@@ -13,11 +14,11 @@ class AboutPage extends Component {
 
   componentDidMount() {
     this.setTime();
-    
-  }
-  
 
-  
+  }
+
+
+
 
   setTime = () => {
     let clock = moment().add(1, 'minutes').format('MM DD YYYY, h:mm a');
@@ -29,7 +30,7 @@ class AboutPage extends Component {
 
   render() {
 
-   
+
 
 
     return (
@@ -51,7 +52,7 @@ class AboutPage extends Component {
           9:00-10:00 - Cedar Inn for Monkey Awards
         </p>
         <p>
-          10:30-12:00 - Uptown 
+          10:30-12:00 - Uptown
         </p>
         <p>
           12:30-2:00 - The Front
@@ -59,11 +60,13 @@ class AboutPage extends Component {
         <h3>
           44 Wildcards have joined the party
         </h3>
+        
+        <div className="countdownTimer">
+          <CountDownTimer />
+        </div>
         <h3>
-          1:30 until Graham does something they'll regret
+          until Graham does something they'll regret
         </h3>
-        <Clock timeTillDate={this.state.timeToGo} timeFormat="MM DD YYYY, h:mm a" setTime={this.setTime} />
-        {this.state.timeToGo}
         <h3>
           Welcome shot recipe:
         </h3>
