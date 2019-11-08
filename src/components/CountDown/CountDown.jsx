@@ -10,7 +10,7 @@ class CountDownTimer extends Component {
     }
 
     componentDidMount() {
-        let randomMonkeyNum = Math.floor(Math.random() * 20);
+        let randomMonkeyNum = Math.floor(Math.random() * 21);
         console.log(randomMonkeyNum);
         let chosenMonkey = this.props.monkeys[randomMonkeyNum];
 
@@ -43,7 +43,7 @@ class CountDownTimer extends Component {
         return (
             <CountDown
                 key={this.state.completions}
-                seconds={5}
+                seconds={10}
                 color="#000"
                 alpha={0.9}
                 size={150}
