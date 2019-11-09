@@ -42,7 +42,13 @@ class CountDownTimer extends Component {
         this.props.dispatch({
             type: 'SET_MONKEY',
             payload: chosenMonkey
-        })
+        });
+        this.props.dispatch({
+            type: 'FETCH_CURRENT_PLACE'
+        });
+        this.props.dispatch({
+            type: 'FETCH_WILDCARDS'
+        });
     }
 
     render() {
