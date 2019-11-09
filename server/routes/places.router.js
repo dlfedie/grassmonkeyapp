@@ -56,6 +56,8 @@ router.put('/edit', rejectUnauthenticated, rejectNonAdmin, async (req, res) => {
         
         
         await connection.query('COMMIT');
+        res.sendStatus(201);
+
     } catch {
         await connection.query('ROLLBACK');
         res.sendStatus(500);

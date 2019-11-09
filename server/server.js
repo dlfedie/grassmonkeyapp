@@ -11,6 +11,7 @@ const passport = require('./strategies/user.strategy');
 // Route includes
 const userRouter = require('./routes/user.router');
 const placesRouter = require('./routes/places.router');
+const wildcardsRouter = require('./routes/wildcards.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -26,6 +27,7 @@ app.use(passport.session());
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/places', placesRouter);
+app.use('/api/wildcards', wildcardsRouter)
 
 // Serve static files
 app.use(express.static('build'));

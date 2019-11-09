@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Button from '@material-ui/core/Button';
 
 import monkeyMap from '../images/monkeyMap.jpg';
 // import moment from 'moment';
@@ -24,6 +25,14 @@ class AboutPage extends Component {
     })
   };
 
+  handleAddWildcard = () => {
+    console.log('clicked button');
+    
+    this.props.dispatch({
+      type: 'ADD_WILDCARD'
+    })
+  }
+
   
 
   render() {
@@ -43,7 +52,12 @@ class AboutPage extends Component {
         <p>9:00-10:00 - Cedar Inn for Monkey Awards</p>
         <p>10:30-12:00 - Uptown</p>
         <p>12:30-2:00 - The Front</p>
-        <h3>44 <span className="wildcards">Wildcards</span> have joined the party</h3>
+        <h3>{this.props.wildcards} <span className="wildcards">Wildcards</span> have joined the party</h3>
+        <div className="wildcardButton">
+          <Button variant="contained" color="primary" onClick={this.handleAddWildcard} style={{ margin: '5px' }} className="wildcardButton">
+            Add a Wildcard!!
+          </Button>
+        </div>
         <h2>Timer of Regrets</h2>
         <div className="countdownTimer">
           <CountDownTimer />
@@ -62,6 +76,7 @@ const mapStateToProps = reduxStore => {
     monkeys: reduxStore.monkeys.grassMonkeyPlayers,
     chosen: reduxStore.monkeys.chosenPlayer,
     currentPlace: reduxStore.monkeys.chosenPlace,
+    wildcards: reduxStore.monkeys.numberOfWildcards,
   };
 };
 

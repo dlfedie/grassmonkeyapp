@@ -44,8 +44,8 @@ class InfoPage extends Component {
     return (
       <div>
         <h1>Edit Page</h1>
-        {JSON.stringify(this.props.places)}
-        {JSON.stringify(this.props.currentPlace)}
+        {/* {JSON.stringify(this.props.places)} */}
+        {/* {JSON.stringify(this.props.currentPlace)} */}
         <h2>Current Place: {this.props.currentPlace.place}</h2>
         <select
           onChange={event =>

@@ -48,10 +48,41 @@ function* editCurrentPlace(action) {
     }
 };
 
+function* fetchWildcards(action) {
+    try {
+        const config = {
+            headers: { 'Content-Type': 'application/json' },
+            withCredentials: true,
+        };
+        const response = yield axios.get(`/api/wildcards/`, config)
+        yield put({ type: 'SET_NUMBER_OF_WILDCARDS', payload: response.data.wildcards })
+
+    } catch (error) {
+        console.log('error in fetch wildcards saga:', error);
+    }
+};
+
+function* addWildcard(action) {
+    try {
+        const config = {
+            headers: { 'Content-Type': 'application/json' },
+            withCredentials: true,
+        };
+        yield axios.put(`/api/wildcards/`, config)
+        yield put({ type: 'FETCH_WILDCARDS'});
+
+    } catch (error) {
+        console.log('error in fetch wildcards saga:', error);
+    }
+};
+
+
 function* monkeySaga() {
     yield takeLatest('FETCH_PLACES', fetchPlaces);
     yield takeLatest('FETCH_CURRENT_PLACE', fetchCurrentPlace);
     yield takeLatest('EDIT_CURRENT_LOCATION', editCurrentPlace);
+    yield takeLatest('FETCH_WILDCARDS', fetchWildcards);
+    yield takeLatest('ADD_WILDCARD', addWildcard);
 }
 
 export default monkeySaga;
