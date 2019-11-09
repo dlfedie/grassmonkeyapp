@@ -10,25 +10,21 @@ import CountDownTimer from '../CountDown/CountDown';
 
 
 class AboutPage extends Component {
-  // state = {
-  //   timeToGo: undefined,
-  // }
+  
 
   componentDidMount() {
-    // this.setTime();
+    this.fetchCurrentPlace();
 
   }
 
 
+  fetchCurrentPlace = () => {
+    this.props.dispatch({
+      type: 'FETCH_CURRENT_PLACE'
+    })
+  };
 
-
-  // setTime = () => {
-  //   let clock = moment().add(1, 'minutes').format('MM DD YYYY, h:mm a');
-  //   // clock.moment().add(2, 'minutes');
-  //   this.setState({
-  //     timeToGo: clock
-  //   })
-  // }
+  
 
   render() {
 
@@ -39,7 +35,7 @@ class AboutPage extends Component {
       <div>
         <h1>Monkey Madness!</h1>
         <h2>Monkeys are currently at:</h2>
-        <h2>Home, sleeping</h2>
+        <h2>{this.props.currentPlace.place}</h2>
         <img src={monkeyMap} alt="map" className="monkeyMap" />
         <h2>(times are approximate..)</h2>
         <p>6:30-8:00 - Dinner at Ginger Hop</p>
@@ -65,6 +61,7 @@ const mapStateToProps = reduxStore => {
   return {
     monkeys: reduxStore.monkeys.grassMonkeyPlayers,
     chosen: reduxStore.monkeys.chosenPlayer,
+    currentPlace: reduxStore.monkeys.chosenPlace,
   };
 };
 

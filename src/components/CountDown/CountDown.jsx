@@ -43,7 +43,7 @@ class CountDownTimer extends Component {
         return (
             <CountDown
                 key={this.state.completions}
-                seconds={10}
+                seconds={30}
                 color="#000"
                 alpha={0.9}
                 size={150}

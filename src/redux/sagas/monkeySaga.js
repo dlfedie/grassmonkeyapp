@@ -37,7 +37,11 @@ function* editCurrentPlace(action) {
             headers: { 'Content-Type': 'application/json' },
             withCredentials: true,
         };
-        yield axios.put(`/`)
+        const place = action.payload
+        yield axios.put(`/api/places/edit`, {id: place}, config);
+        yield put({
+            type: 'FETCH_CURRENT_PLACE'
+        });
 
     } catch (error) {
         console.log('error in edit current place saga:', error);

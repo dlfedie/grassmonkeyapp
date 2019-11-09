@@ -28,6 +28,8 @@ class InfoPage extends Component {
     })
   };
 
+  
+
 
   render() {
 
@@ -46,7 +48,8 @@ class InfoPage extends Component {
             this.props.dispatch({
               type: 'EDIT_CURRENT_LOCATION',
               payload: event.target.value
-            })}>
+            })
+        }>
           {placesToGo}
         </select>
       </div>
