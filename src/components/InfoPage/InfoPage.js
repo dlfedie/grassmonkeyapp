@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 
 class InfoPage extends Component {
 
+  state = {
+    bloo: 0,
+  }
+
   componentDidMount() {
     this.fetchPlaces();
     this.fetchCurrentPlace();

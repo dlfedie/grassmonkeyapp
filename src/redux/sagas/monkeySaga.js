@@ -12,7 +12,7 @@ function* fetchPlaces(action) {
         const response = yield axios.get(`/api/places`, config)
         yield put({ type: 'SET_PLACES', payload: response.data })
     } catch (error) {
-        console.log('error in fetchLocations saga:', error)
+        console.log('error in fetch places saga:', error)
     }
 };
 
@@ -26,7 +26,7 @@ function* fetchCurrentPlace(action) {
         const response = yield axios.get(`/api/places/current`, config)
         yield put({ type: 'SET_CURRENT_PLACE', payload: response.data })
     } catch (error) {
-        console.log('error in fetchLocations saga:', error)
+        console.log('error in fetch current place saga:', error)
     }
 };
 

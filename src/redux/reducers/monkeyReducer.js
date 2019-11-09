@@ -83,7 +83,7 @@ const allPlaces = (state = [], action) => {
     }
 };
 
-const chosenPlace = (state = '', action) => {
+const chosenPlace = (state = {}, action) => {
     switch (action.type) {
         case 'SET_CURRENT_PLACE':
             return action.payload;
