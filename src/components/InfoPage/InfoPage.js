@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Button from '@material-ui/core/Button';
+
 
 class InfoPage extends Component {
 
@@ -32,6 +34,13 @@ class InfoPage extends Component {
     })
   };
 
+  handleResetWildcards = () => {
+    console.log('clicked button');
+
+    this.props.dispatch({
+      type: 'RESET_WILDCARDS'
+    })
+  };
   
 
 
@@ -52,10 +61,16 @@ class InfoPage extends Component {
             this.props.dispatch({
               type: 'EDIT_CURRENT_LOCATION',
               payload: event.target.value
-            })
-        }>
+            })}
+          className="selector"
+          >
           {placesToGo}
         </select>
+        <div className="wildcardButton">
+          <Button variant="contained" color="primary" onClick={this.handleResetWildcards} style={{ margin: '5px' }} className="wildcardButton">
+            Reset Wildcards
+          </Button>
+        </div>
       </div>
     )
   }

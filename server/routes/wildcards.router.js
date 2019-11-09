@@ -1,5 +1,8 @@
 const express = require('express');
 const pool = require('../modules/pool');
+
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
+const { rejectNonAdmin } = require('../modules/isAdminAuthentication-middleware');
 const router = express.Router();
 
 /**
@@ -31,6 +34,19 @@ router.put('/', (req, res) => {
             res.sendStatus(500);
         })
 });
+
+router.delete('/', rejectUnauthenticated, rejectNonAdmin, (req, res) => {
+    let queryText = `UPDATE "wildcards" SET "wildcards" = 0 WHERE ID = 1;`;
+    pool.query(queryText)
+        .then((result) => {
+            // console.log('in places GET router:', result);
+            res.sendStatus(204);
+        })
+        .catch((error) => {
+            // console.log('error in places GET router:', error);
+            res.sendStatus(500);
+        })
+})
 
 /**
  * POST route template

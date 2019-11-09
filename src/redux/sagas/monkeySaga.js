@@ -76,6 +76,21 @@ function* addWildcard(action) {
     }
 };
 
+function* resetWildcards(action) {
+    try {
+        const config = {
+            headers: { 'Content-Type': 'application/json' },
+            withCredentials: true,
+        };
+        yield axios.delete(`/api/wildcards/`, config);
+        yield put({ type: 'FETCH_WILDCARDS' });
+
+    } catch (error) {
+        console.log('error in fetch wildcards saga:', error);
+    }
+};
+
+
 
 function* monkeySaga() {
     yield takeLatest('FETCH_PLACES', fetchPlaces);
@@ -83,6 +98,7 @@ function* monkeySaga() {
     yield takeLatest('EDIT_CURRENT_LOCATION', editCurrentPlace);
     yield takeLatest('FETCH_WILDCARDS', fetchWildcards);
     yield takeLatest('ADD_WILDCARD', addWildcard);
+    yield takeLatest('RESET_WILDCARDS', resetWildcards)
 }
 
 export default monkeySaga;

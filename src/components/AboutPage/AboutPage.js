@@ -31,7 +31,7 @@ class AboutPage extends Component {
     this.props.dispatch({
       type: 'ADD_WILDCARD'
     })
-  }
+  };
 
   
 
