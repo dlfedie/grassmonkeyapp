@@ -28,7 +28,7 @@ class CountDownTimer extends Component {
             () => console.log('completions', this.state.completions)
         )
 
-        let randomMonkeyNum = Math.floor(Math.random() * 20);
+        let randomMonkeyNum = Math.floor(Math.random() * 26);
         console.log(randomMonkeyNum);
         let chosenMonkey = this.props.monkeys[randomMonkeyNum];
 

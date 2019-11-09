@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 
 import monkeyMap from '../images/monkeyMap.jpg';
-import moment from 'moment';
+// import moment from 'moment';
 
 // import Clock from '../Clock/Clock';
 import CountDownTimer from '../CountDown/CountDown';

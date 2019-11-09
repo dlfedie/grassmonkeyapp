@@ -1,5 +1,7 @@
 import React from 'react';
-import './Footer.css'
+import './Footer.css';
+import { Link } from 'react-router-dom';
+
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -8,7 +10,7 @@ import './Footer.css'
 
 const Footer = () => (
   <footer>
-    &copy; PokeMonkey
+    <Link className="footer-link" to="/home">&copy; PokeMonkey</Link>
   </footer>
 );
 

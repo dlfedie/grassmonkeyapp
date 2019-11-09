@@ -1,9 +1,9 @@
-import { put, takeLatest } from 'redux-saga/effects';
-import axios from 'axios';
+import { takeLatest } from 'redux-saga/effects';
+// import axios from 'axios';
 
 
 function* getMonkey(action) {
-    console.log('monkey');
+    yield console.log('monkey');
     
     
     
