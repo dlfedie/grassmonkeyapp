@@ -1,19 +1,13 @@
 # Grass Monkey Bus Tour 2019
 
+I created this so my frisbee team's end-of-season party bus tour could keep our teammates and friends who were meeting up with us later in the loop of where to meet up with us!
 
-# Name of Application
-
-One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
+You can find a deployed version here: https://grassmonkeys.herokuapp.com
 
 ## Built With
 
 This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
 
-List technologies and frameworks here
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
@@ -26,59 +20,37 @@ Before you get started, make sure you have the following software installed on y
 
 ### Installing
 
-Steps to get the development environment running.
+Steps to get the development environment running:
 
 1. Download this project.
 2. `npm install`
 3. `npm start`
 
-And so on...
 
-## Screen Shot
+## Notes
 
-Include one or two screen shots of your project here (optional). Remove if unused.
-
-## Documentation
-
-Link to a read-only version of your scope document or other relevant documentation here (optional). Remove if unused.
+This was setup with a database since I used a free heroku site. I wanted the data to persist after heroku shuts it down. There were a few things I rushed through just to get it done in time, but all in all it served its purpose!
 
 ### Completed Features
 
-High level list of items completed.
-
-- [x] Feature a
-- [x] Feature b
+- [x] Header shows where the team is at.
+- [x] Admin login page to actually be able to go change the location and reset the wildcards if they get out of hand.
+- [x] Countdown timer!
+- [x] Randomize who's on the timer.
 
 ### Next Steps
 
 Features that you would like to add at some point in the future.
 
-- [ ] Feature c
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+- [ ] Actually integrate with Google Maps, instead of using a static map photo.
+- [ ] Perhaps randomize the timer a bit, or add it to the admin page.
+- [ ] Put the list of players/friends in the DB, and add an admin side to be able to change that if needed.
 
 ## Authors
 
-* Name of author(s)
+Dustin Fedie
 
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-
-
-This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
-
-
-
-
-
-## Production Build
-
-Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
-
-* Start postgres if not running already by using `brew services start postgresql`
-* Run `npm start`
-* Navigate to `localhost:5000`
+* Hat tip to GitHub user pughpugh's react-countdown-clock: https://github.com/pughpugh/react-countdown-clock
