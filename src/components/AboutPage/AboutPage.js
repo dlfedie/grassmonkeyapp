@@ -65,7 +65,7 @@ class AboutPage extends Component {
         <h3>until {this.props.chosen.monkey} does something {this.props.chosen.gender}'ll regret</h3>
         {/* {JSON.stringify(this.props.monkeys)} */}
         <h3>Welcome shot recipe:</h3>
-        <p>Mix 1 part 99 Bananas with 1 Monkey body part. Serve immediately.</p>
+        <p>1 part 99 Bananas, 1 hug from any Monkey</p>
       </div>
     )
   }
