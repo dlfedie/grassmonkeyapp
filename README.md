@@ -3,6 +3,7 @@
 I created this so my frisbee team's end-of-season party bus tour could keep our teammates and friends who were meeting up with us later in the loop of where to meet up with us!
 
 I used AWS code pipeline to get this partially up and running here: https://codepipeline-monkey-demo.s3.us-east-2.amazonaws.com/index.html#/about
+
 Need to figure out the RDS features to get the database to work. I could modify the code to make it mostly a front-end app, but I think figuring out RDS will be important.
 
 You can find a deployed heroku version here: https://grassmonkeys.herokuapp.com
