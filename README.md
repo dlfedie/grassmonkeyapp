@@ -10,7 +10,7 @@ You can find a deployed heroku version here: https://grassmonkeys.herokuapp.com
 
 ## Built With
 
-This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
+This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`). Oh, and a lot of love!
 
 
 ### Prerequisites
